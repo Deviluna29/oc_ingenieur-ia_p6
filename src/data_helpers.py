@@ -2,6 +2,7 @@ import pandas as pd
 import json
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+import cv2
 
 # Extrait les données json dans un DataFrame
 def extract_data(path: str):
@@ -47,4 +48,18 @@ def display_word_freq_hist(freq, number):
     plt.ylabel('Fréquence')
     plt.show()
 
+# Affiche l'image et son histogramme de niveau de gris
+def show_image_hist(image):
+    plt.subplots(1, 2, figsize=(15,5))
+    plt.subplot(1, 2, 1)
+    plt.imshow(image, cmap='gray')
+    plt.subplot(1, 2, 2)
+    plt.hist(image.flatten(), bins=range(256))
+    plt.show()
+
+def transform_image(img_path, sift):
+    img = cv2.imread(img_path, 0)
+    img = cv2.equalizeHist(img)
+    img = cv2.blur(img, (3,3))
+    return sift.detectAndCompute(img,None)
 
