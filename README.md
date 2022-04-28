@@ -37,11 +37,11 @@ yelp_photos/
 
 ## Utilisation des notebooks
 
-Lancer les scripts suivant dans l'ordre :
+Lancer les scripts suivants dans l'ordre :
 
 - le fichier "P06_01_api.py" pour collecter certaines données via l'api, ce script va crée un fichier "bad_reviews_from_api.csv" à la racine
 
 - le notebook "P06_02_notebook_analyse.ipynb" qui sert au merge des données, celui ci va créer un fichier "bad_reviews.csv" à la racine.
 
 
-Une fois ces 2 fichiers créés, les autres notebooks peuvent petre utilisés
+Une fois ces 2 fichiers créés, les autres notebooks peuvent être utilisés
